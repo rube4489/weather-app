@@ -1,5 +1,3 @@
-import { getWeatherData } from "../services/weatherService";
-
 //Convierto tiempo unix a Date
 export const converDate = (date) => new Date(date * 1000);
 
