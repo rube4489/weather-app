@@ -1,5 +1,5 @@
 import React from "react";
-import { getHour, getTemp } from "../helpers/helpers";
+import { converDate, getHour, getTemp } from "../helpers/helpers";
 import { Card, Container, WrapperImg } from "../styled/Container";
 import { Label } from "../styled/Text";
 
@@ -12,8 +12,7 @@ const CurrentlyWeatherHours = ({ data }) => {
       <Container width="800px" style={{ overflow: "auto" }} mt="10px">
         {data?.hourly
           ?.filter(
-            (item) =>
-              new Date(item.dt * 1000).getDate() === new Date().getDate()
+            (item) => converDate(item.dt).getDate() === new Date().getDate()
           )
           ?.map((item, i) => (
             <Card
@@ -26,14 +25,18 @@ const CurrentlyWeatherHours = ({ data }) => {
               key={i}
             >
               <Label mb="0.5em">{getHour(item?.dt)}</Label>
-              {item?.weather?.map((icon, idx) => (
-                <WrapperImg
-                  key={idx}
-                  src={`http://openweathermap.org/img/wn/${icon?.icon}@2x.png`}
-                  width="54px"
-                  height="54px"
-                />
-              ))}
+              {item?.weather?.map(
+                (icon, idx) =>
+                  idx === 0 && (
+                    <WrapperImg
+                      key={idx}
+                      src={`http://openweathermap.org/img/wn/${icon?.icon}@2x.png`}
+                      width="54px"
+                      height="54px"
+                      alt="icono clima"
+                    />
+                  )
+              )}
 
               <Label mt="0.5em" fontS="1.125em">
                 {getTemp(item?.temp).toFixed(0)}

@@ -39,13 +39,17 @@ const CurretlyInfoWeather = ({
 
           <Row>
             <Col justify="space-evenly">
-              {item?.current?.weather?.map((icon, idx) => (
-                <WrapperImg
-                  key={idx}
-                  width="10.5em"
-                  src={`http://openweathermap.org/img/wn/${icon?.icon}@2x.png`}
-                />
-              ))}
+              {item?.current?.weather?.map(
+                (icon, idx) =>
+                  idx === 0 && (
+                    <WrapperImg
+                      key={idx}
+                      width="10.5em"
+                      src={`http://openweathermap.org/img/wn/${icon?.icon}@2x.png`}
+                      alt="icono clima"
+                    />
+                  )
+              )}
               <Container flexD="column">
                 <Label fontS="5.25em" fontW="300">
                   {getTemp(item?.current?.temp).toFixed(0)}°

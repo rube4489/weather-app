@@ -36,11 +36,17 @@ const NextWeatherState = ({ data }) => {
                 ).getMonth()}`}</Label>
               </Container>
               <Container flexD="column">
-                <WrapperImg
-                  width="45px"
-                  src={`http://openweathermap.org/img/wn/${item?.weather[0]?.icon}@2x.png`}
-                  height="45px"
-                />
+                {item?.weather?.map(
+                  (value, idx) =>
+                    idx === 0 && (
+                      <WrapperImg
+                        width="45px"
+                        src={`http://openweathermap.org/img/wn/${value?.icon}@2x.png`}
+                        height="45px"
+                        alt="icono clima"
+                      />
+                    )
+                )}
               </Container>
               <Container flexD="column">
                 <Label>{getTemp(item.temp.min).toFixed(0)} </Label>
