@@ -31,9 +31,9 @@ const NextWeatherState = ({ data }) => {
                 <Label
                   color="rgba(255,255,255,0.6)"
                   fontS="1.1em"
-                >{`${converDate(item?.dt).getDate()}/${converDate(
-                  item?.dt
-                ).getMonth()}`}</Label>
+                >{`${converDate(item?.dt).getDate()}/${
+                  converDate(item?.dt).getMonth() + 1
+                }`}</Label>
               </Container>
               <Container flexD="column">
                 {item?.weather?.map(
