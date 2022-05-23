@@ -40,6 +40,7 @@ const NextWeatherState = ({ data }) => {
                   (value, idx) =>
                     idx === 0 && (
                       <WrapperImg
+                        key={idx}
                         width="45px"
                         src={`http://openweathermap.org/img/wn/${value?.icon}@2x.png`}
                         height="45px"
