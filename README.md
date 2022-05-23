@@ -13,11 +13,11 @@ Aplicación web para consulta de clima.
 
 ### Desktop
 
-![](https://i.ibb.co/VHgZ9rK/weather-App-Screen1.png)
+![](https://i.ibb.co/SmV05kZ/desktop.png)
 
 ### Mobile
 
-![](https://i.ibb.co/SBxHv20/mobile-Screen.png)
+![](https://i.ibb.co/9NY72Fs/mobile.png)
 
 ## Demo
 
