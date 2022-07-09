@@ -21,7 +21,7 @@ Aplicación web para consulta de clima.
 
 ## Demo
 
-En el siguiente link podrá visualizar la demo [weather app](https://challengeweatherapp.netlify.app/ "weather app")
+En el siguiente link podrá visualizar la demo [weather app](https://weatherconsultapp.netlify.app/ "weather app")
 
 ## Instalación en ambiente local
 
