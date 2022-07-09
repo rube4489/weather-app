@@ -12,28 +12,18 @@ import { H1, H2, Label } from "../styled/Text";
 import SelectCity from "./SelectCity";
 import PropTypes from "prop-types";
 
-const CurretlyInfoWeather = ({
-  setLocation,
-  data,
-  setLoading,
-  nameCity,
-  setNameCity,
-}) => {
+const CurretlyInfoWeather = ({ setLocation, data, setLoading }) => {
   return (
-    <Container mt="2rem" flexD="column">
+    <Container mt="2rem" column>
       {data?.map((item, idx) => (
         <div key={idx}>
           <Row>
-            <Col flexD="column">
-              <H1>{!nameCity ? reformTitle(item.timezone) : nameCity}</H1>
+            <Col column>
+              <H1>{reformTitle(item.timezone)}</H1>
               <H2>{getCurrentlyDate(item?.current?.dt)}</H2>
             </Col>
             <Col justify="flex-end">
-              <SelectCity
-                setNameCity={setNameCity}
-                setLocation={setLocation}
-                setLoading={setLoading}
-              />
+              <SelectCity setLocation={setLocation} setLoading={setLoading} />
             </Col>
           </Row>
 
@@ -50,7 +40,7 @@ const CurretlyInfoWeather = ({
                     />
                   )
               )}
-              <Container flexD="column">
+              <Container column>
                 <Label fontS="5.25em" fontW="300">
                   {getTemp(item?.current?.temp).toFixed(0)}°
                 </Label>
@@ -59,9 +49,9 @@ const CurretlyInfoWeather = ({
                 </H2>
               </Container>
             </Col>
-            <Col borderL="1px solid #FFF" justify="center" flexD="column">
+            <Col borderL="1px solid #FFF" justify="center" column>
               <Container justify="space-around">
-                <Container flexD="column">
+                <Container column>
                   {item?.daily?.map(
                     (value, idx) =>
                       idx === 0 && (
@@ -75,7 +65,7 @@ const CurretlyInfoWeather = ({
                   </Label>
                 </Container>
 
-                <Container flexD="column">
+                <Container column>
                   <Label fontS="1.45em">
                     {getKm(item?.current?.wind_speed)?.toFixed(0)} km/h
                   </Label>
@@ -84,7 +74,7 @@ const CurretlyInfoWeather = ({
                   </Label>
                 </Container>
 
-                <Container flexD="column">
+                <Container column>
                   <Label fontS="1.45em">
                     {getHourAndMinutes(item?.current?.sunrise)}
                   </Label>
@@ -94,7 +84,7 @@ const CurretlyInfoWeather = ({
                 </Container>
               </Container>
               <Container justify="space-around" mt="15px">
-                <Container flexD="column">
+                <Container column>
                   {item?.daily?.map(
                     (value, idx) =>
                       idx === 0 && (
@@ -107,13 +97,13 @@ const CurretlyInfoWeather = ({
                     Min
                   </Label>
                 </Container>
-                <Container flexD="column">
+                <Container column>
                   <Label fontS="1.45em">{item?.current?.humidity}%</Label>
                   <Label color="rgba(255,255,255,0.6)" fontS="1.1em">
                     Humedad
                   </Label>
                 </Container>
-                <Container flexD="column">
+                <Container column>
                   <Label fontS="1.45em">
                     {getHourAndMinutes(item?.current?.sunset)}
                   </Label>
@@ -133,7 +123,5 @@ const CurretlyInfoWeather = ({
 CurretlyInfoWeather.propTypes = {
   setLocation: PropTypes.func.isRequired,
   setLoading: PropTypes.func.isRequired,
-  setNameCity: PropTypes.func.isRequired,
-  nameCity: PropTypes.string,
 };
 export default CurretlyInfoWeather;
