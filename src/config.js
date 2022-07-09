@@ -1,5 +1,4 @@
 export const getApiUrl = (lat, long) => {
-  const apiKey =
-    process.env.REACT_APP_API_KEY || "f63c54f2a914e1603810552aa7b68794";
+  const apiKey = process.env.REACT_APP_API_KEY;
   return `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely&lang=es&appid=${apiKey}`;
 };
