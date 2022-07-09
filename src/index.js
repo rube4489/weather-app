@@ -7,11 +7,9 @@ import { MainLayout } from "./styled/MainLayout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <MainLayout>
-      <App />
-    </MainLayout>
-  </React.StrictMode>
+  <MainLayout>
+    <App />
+  </MainLayout>
 );
 
 // If you want to start measuring performance in your app, pass a function
