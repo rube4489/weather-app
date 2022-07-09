@@ -2,6 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
+  ${(props) => {
+    return props.row ? "flex-direction:row;" : "";
+  }}
+  ${(props) => {
+    return props.column ? "flex-direction:column;" : "";
+  }}
   ${(props) => props.position && `flex-position:${props.position};`}
   ${(props) => props.flexD && `flex-direction:${props.flexD};`}
   ${(props) => props.justify && `justify-content:${props.justify};`}
@@ -54,6 +60,13 @@ export const Card = styled(Container)`
   font-size: 1.125em;
   text-align: center;
   ${(props) => props.flexShrink && `flex-shrink:${props.flexShrink};`};
+  ${(props) =>
+    props.tHour &&
+    `justify-content: space-around;align-items: center;margin:5px;flex-shrink:0;width:6.05em;flex-direction:column;`};
+  ${(props) =>
+    props.tNextW &&
+    `justify-content: space-around;align-items: center;padding:0.8em 0;width:100%;margin-bottom:0.3em;`};
+
   @media screen and (max-width: 375px) {
     flex-shrink: 0;
   }
@@ -73,6 +86,12 @@ export const Row = styled.div`
 export const Col = styled.div`
   display: flex;
   flex: 50%;
+  ${(props) => {
+    return props.row ? "flex-direction:row;" : "";
+  }}
+  ${(props) => {
+    return props.column ? "flex-direction:column;" : "";
+  }}
   ${(props) => props.borderL && `border-left:${props.borderL};`}
   ${(props) => props.flexD && `flex-direction:${props.flexD};`}
   ${(props) => props.justify && `justify-content:${props.justify};`}

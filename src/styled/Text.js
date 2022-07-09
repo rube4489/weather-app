@@ -24,3 +24,14 @@ export const Label = styled.label`
   ${(props) => props.mt && `margin-top:${props.mt};`}
   ${(props) => props.mb && `margin-bottom:${props.mb};`}
 `;
+
+export const Button = styled.button`
+  width: 100px;
+  height: 40px;
+  border-radius: 0.25em;
+  border: 1px solid white;
+  color: white;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+`;
