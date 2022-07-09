@@ -100,39 +100,3 @@ export const getCurrentlyDate = (date) => {
 
   return `${dayName}, ${numberDay} de ${month}`;
 };
-
-//obtengo ubicación del usuario
-export const getLocation = (setLocation, setNameCity) => {
-  if ("geolocation" in navigator) {
-    function getPosition(position) {
-      if (
-        position?.coords?.latitude === -32.9515008 &&
-        position?.coords?.longitude === -60.6404608
-      ) {
-        setLocation({
-          lat: "-32.9468",
-          long: "-60.6393",
-        });
-        sessionStorage.setItem("lat", "-32.9468");
-        sessionStorage.setItem("long", "-60.6393");
-        setNameCity("Argentina, Rosario");
-      } else {
-        setLocation({
-          lat: position?.coords?.latitude,
-          long: position?.coords?.longitude,
-        });
-        sessionStorage.setItem("lat", position?.coords?.latitude);
-        sessionStorage.setItem("long", position?.coords?.longitude);
-      }
-    }
-    function getError(err) {
-      sessionStorage.clear();
-      setLocation({
-        lat: "-32.9468",
-        long: "-60.6393",
-      });
-      console.log(err.message);
-    }
-    navigator.geolocation.getCurrentPosition(getPosition, getError);
-  }
-};
