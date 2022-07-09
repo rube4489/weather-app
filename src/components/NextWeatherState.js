@@ -9,20 +9,13 @@ const NextWeatherState = ({ data }) => {
       <Label mt="40px" fontS="1.125em" fontW="500">
         Proximos 5 días
       </Label>
-      <Container mt="10px" flexD="column">
+      <Container mt="10px" column>
         {data?.daily?.map(
           (item, i) =>
             i > 0 &&
             i < 6 && (
-              <Card
-                key={i}
-                width="100%"
-                padding="0.8em 0"
-                align="center"
-                justify="space-around"
-                mb="0.3em"
-              >
-                <Container flexD="column">
+              <Card tNextW key={i}>
+                <Container column>
                   <Label>{getDayName(converDate(item?.dt))}</Label>
                   <Label
                     color="rgba(255,255,255,0.6)"
@@ -31,7 +24,7 @@ const NextWeatherState = ({ data }) => {
                     converDate(item?.dt).getMonth() + 1
                   }`}</Label>
                 </Container>
-                <Container flexD="column">
+                <Container column>
                   {item?.weather.map(
                     (value, idx) =>
                       idx === 0 && (
@@ -45,19 +38,19 @@ const NextWeatherState = ({ data }) => {
                       )
                   )}
                 </Container>
-                <Container flexD="column">
-                  <Label>{getTemp(item.temp.min).toFixed(0)} </Label>
+                <Container column>
+                  <Label>{getTemp(item.temp.min).toFixed(0)}° </Label>
                   <Label>Min</Label>
                 </Container>
-                <Container flexD="column">
-                  <Label>{getTemp(item.temp.max).toFixed(0)}</Label>
+                <Container column>
+                  <Label>{getTemp(item.temp.max).toFixed(0)}°</Label>
                   <Label>Max</Label>
                 </Container>
-                <Container flexD="column">
+                <Container column>
                   <Label>{item.humidity}%</Label>
                   <Label>Humedad</Label>
                 </Container>
-                <Container flexD="column">
+                <Container column>
                   <Label>{getKm(item.wind_speed).toFixed(0)}</Label>
                   <Label>Km/h</Label>
                 </Container>
