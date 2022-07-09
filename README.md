@@ -8,7 +8,7 @@ Aplicación web para consulta de clima.
 - Optimizada para dispositivos móviles(iPhone xr,12pro, se, Ipad Air, Pixel5, Samsung A52, etc.).
 - Optimizada para resolución 1280 x 768, 1366 x 768. 1920 \* 1080.
 - Se utilizó openweathermap como API de consulta.
-- Determina ubicación actual y posee selector de 5 ciudades ya establecidas.
+- Posee selector de 5 ciudades ya establecidas.
 - Muestra tiempo actual y de los próximos 5 días.
 
 ### Desktop
@@ -45,11 +45,11 @@ $ yarn install
 
 Copiar el archivo .env-example y renombrarlo por .env
 
-Cambiar la variable de entorno
+Ingresar variable de entorno
 
 REACT_APP_API_KEY=AQUI_TU_KEY_DE_OPENWEATHERMAP
 
-Nota.- En caso de no contar con una apikey, se debe generar una en https://openweathermap.org/
+Nota.- En caso de no contar con una apikey, se puede generar una de forma gratuita en https://openweathermap.org/
 
 #### NPM
 
