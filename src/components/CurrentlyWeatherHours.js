@@ -15,15 +15,7 @@ const CurrentlyWeatherHours = ({ data }) => {
             (item) => converDate(item.dt).getDate() === new Date().getDate()
           )
           ?.map((item, i) => (
-            <Card
-              justify="space-around"
-              align="center"
-              flexD="column"
-              width="6.05em"
-              mg="5px"
-              flexShrink="0"
-              key={i}
-            >
+            <Card tHour key={i}>
               <Label mb="0.5em">{getHour(item?.dt)}</Label>
               {item?.weather?.map(
                 (icon, idx) =>
@@ -39,7 +31,7 @@ const CurrentlyWeatherHours = ({ data }) => {
               )}
 
               <Label mt="0.5em" fontS="1.125em">
-                {getTemp(item?.temp).toFixed(0)}
+                {getTemp(item?.temp).toFixed(0)}°
               </Label>
             </Card>
           ))}
