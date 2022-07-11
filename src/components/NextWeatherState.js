@@ -31,7 +31,7 @@ const NextWeatherState = ({ data }) => {
                         <WrapperImg
                           key={idx}
                           width="45px"
-                          src={`http://openweathermap.org/img/wn/${item?.weather[0]?.icon}@2x.png`}
+                          src={`https://openweathermap.org/img/wn/${item?.weather[0]?.icon}@2x.png`}
                           height="45px"
                           alt="icono clima"
                         />

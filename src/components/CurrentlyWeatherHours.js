@@ -22,7 +22,7 @@ const CurrentlyWeatherHours = ({ data }) => {
                   idx === 0 && (
                     <WrapperImg
                       key={idx}
-                      src={`http://openweathermap.org/img/wn/${icon?.icon}@2x.png`}
+                      src={`https://openweathermap.org/img/wn/${icon?.icon}@2x.png`}
                       width="54px"
                       height="54px"
                       alt="icono clima"

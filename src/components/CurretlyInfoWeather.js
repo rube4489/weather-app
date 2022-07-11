@@ -35,7 +35,7 @@ const CurretlyInfoWeather = ({ setLocation, data, setLoading }) => {
                     <WrapperImg
                       key={idx}
                       width="10.5em"
-                      src={`http://openweathermap.org/img/wn/${icon?.icon}@2x.png`}
+                      src={`https://openweathermap.org/img/wn/${icon?.icon}@2x.png`}
                       alt="icono clima"
                     />
                   )
